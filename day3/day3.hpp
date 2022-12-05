@@ -25,3 +25,8 @@ std::unordered_map<int, std::unordered_set<int>> get_unique_positions (const std
 
 std::vector<int> count_unique_houses(const std::vector<std::unordered_map<int, std::unordered_set<int>>> & );
 int count_unique_houses(const std::unordered_map<int, std::unordered_set<int>> & );
+
+/// Part 2
+
+std::vector<std::vector<std::string>> split_directions_data(const std::vector<std::string> & data);
+std::unordered_map<int, std::unordered_set<int>> merge_maps(const std::unordered_map<int, std::unordered_set<int>> & left, const std::unordered_map<int, std::unordered_set<int>> & right);

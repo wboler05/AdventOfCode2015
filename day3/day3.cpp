@@ -127,3 +127,37 @@ int count_unique_houses(const std::unordered_map<int, std::unordered_set<int>> &
     return house_counts;
 }
 
+/// Part 2
+
+std::vector<std::vector<std::string>> split_directions_data(const std::vector<std::string> & data) {
+    std::vector<std::vector<std::string>> data_split(2);
+
+    for (size_t i = 0; i < data.size(); ++i) {
+        std::string left, right;
+        for (size_t j = 0; j < data[i].size(); j+=2) {
+            left.push_back(data[i][j]);
+            right.push_back(data[i][j+1]);
+        }
+
+        data_split[0].push_back(left);
+        data_split[1].push_back(right);
+    }
+
+    return data_split;
+}
+
+std::unordered_map<int, std::unordered_set<int>> merge_maps(const std::unordered_map<int, std::unordered_set<int>> & left, const std::unordered_map<int, std::unordered_set<int>> & right) {
+    std::unordered_map<int, std::unordered_set<int>> full_map(left);
+
+    for (const auto & [x, y_set] : right) {
+        if (full_map.count(x) == 0) {
+            full_map[x] = y_set;
+        } else {
+            for (const auto & y : y_set) {
+                full_map[x].insert(y);
+            }
+        }
+    }
+
+    return full_map;
+}
