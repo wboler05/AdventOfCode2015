@@ -7,5 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(.)
 
 add_executable(part1 part1.cpp)
+add_executable(part2 part2.cpp)
 #add_executable(part1 part1.cpp day6.cpp)
 #add_executable(part2 part2.cpp day6.cpp)
